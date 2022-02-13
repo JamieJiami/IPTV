@@ -1,7 +1,15 @@
- `use strict`
+`use strict`;
 
-var datetime = new Date();
+function refreshTime() {
 
-console.log(datetime);
+  const timeDisplay = document.getElementById("time");
 
-document.getElementById("time").textContent = datetime; //it will print on html page
+  const dateString = new Date().toLocaleString();
+
+  const formattedString = dateString.replace(", ", " - ");
+
+  timeDisplay.textContent = formattedString;
+
+}
+
+  setInterval(refreshTime, 1000);
